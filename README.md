@@ -15,3 +15,4 @@ Formas para clonar a pasta para local:
 git remote add origin https://github.com/djalmaloliveira/FlaskSQLite_V01.git
 
 Alterado hoje 10/02/23 - 21:44
+Alterado hoje 10/02/23 - 21:49
