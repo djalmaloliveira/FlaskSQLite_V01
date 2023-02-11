@@ -1,0 +1,3 @@
+id_acesso;numero_acesso;nomecliente_acesso;nivel_acesso;data_acesso;horario_acesso;versao_acesso
+1;15.0;Djalma;Adm;10/02/2023;20:12;V001
+2;16.0;João;User;09/02/2023;15:35;V001
