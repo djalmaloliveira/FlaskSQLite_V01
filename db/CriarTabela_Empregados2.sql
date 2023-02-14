@@ -45,7 +45,7 @@ CREATE TABLE "tarifa" (
 	PRIMARY KEY("id_tar" AUTOINCREMENT)
 );
 
-CREATE TABLE "ususario" (
+CREATE TABLE "usuario" (
 	"id_user"	INTEGER NOT NULL,
 	"nome_user"	TEXT NOT NULL,
 	"registro_user"	TEXT,

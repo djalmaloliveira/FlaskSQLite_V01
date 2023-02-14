@@ -1,0 +1,104 @@
+#"https://www.youtube.com/watch?v=Iu6_i4YJQ_8"
+
+import sqlite3
+
+conn = sqlite3.connect('enterprise4.db')
+cursor = conn.cursor()
+
+def inserirAcesso():
+	acesso = [
+					{"numero_acesso":"42","nomecliente_acesso":"Eleonora Santos",	"nivel_acesso":"user",	"data_acesso":"02/05/2022","horario_acesso":"10:12","versao_acesso":"326"},
+					{"numero_acesso":"43","nomecliente_acesso":"Roberto da Cruz", "nivel_acesso":"user",	"data_acesso":"05/08/2022","horario_acesso":"12:47","versao_acesso":"326"}		
+			]
+	print (f'Saida da Lista: {acesso} toda')
+
+	for item in acesso:
+		cursor.execute("""			
+				INSERT INTO "acesso" (numero_acesso,nomecliente_acesso,nivel_acesso,data_acesso,horario_acesso,versao_acesso)  	        
+				VALUES (?,?,?,?,?,?)
+			""",(item['numero_acesso'],item['nomecliente_acesso'],item['nivel_acesso'],item['data_acesso'],item['horario_acesso'],item['versao_acesso']))
+
+	print("Dados inseridos do Acessocom sucesso")
+	conn.commit()
+	conn.close()
+	
+def inserirTarifa():
+	tarifa = [
+					{"nome_tar":'TarDezembro', "valor_tar":'0.4235', "mes_validade_tar":'12/2022', "data_publicacao_tar":'12/11/2022'},
+					{"nome_tar":'TarJaneiro',  "valor_tar":'0.4235', "mes_validade_tar":'01/2023', "data_publicacao_tar":'12/12/2022'},
+			]
+
+	print (f'Saida da Lista: {tarifa} toda')
+
+	for item in tarifa:
+		cursor.execute("""			
+				INSERT INTO "tarifa" (nome_tar,valor_tar,mes_validade_tar,data_publicacao_tar)  	        				
+				VALUES (?,?,?,?)
+			""",(item['nome_tar'],item['valor_tar'],item['mes_validade_tar'],item['data_publicacao_tar']))
+
+	print("Dados da tarifa inseridos sucesso")
+	conn.commit()
+	conn.close()
+	
+def inserirConsumo():
+	consumo = [
+					{"medidor_cons":"12345", "constKwh_cons":"400",	"constDemanda_cons":"400",	"constReativo_cons":"400", "mesfat_cons":"09/2022", "dataleitura_cons":"01/09/2022", "Kwh_Ponta_cons":"1387", "Kwh_ForaPonta_cons":"887", "Demanda_FPonta_cons":"350", "Reativo_Ponta_cons":"1650", "Reativo_ForaPonta_cons":"1350"},
+					{"medidor_cons":"12345", "constKwh_cons":"400",	"constDemanda_cons":"400",	"constReativo_cons":"400", "mesfat_cons":"10/2022", "dataleitura_cons":"01/10/2022", "Kwh_Ponta_cons":"1277", "Kwh_ForaPonta_cons":"968", "Demanda_FPonta_cons":"250", "Reativo_Ponta_cons":"1332", "Reativo_ForaPonta_cons":"1455"},
+			]
+
+	print (f'Saida da Lista: {consumo} toda')
+
+	for item in consumo:
+		cursor.execute("""			
+				INSERT INTO "consumo" ("medidor_cons", "constKwh_cons",	"constDemanda_cons","constReativo_cons",mesfat_cons,dataleitura_cons,Kwh_Ponta_cons,"Kwh_ForaPonta_cons", "Demanda_FPonta_cons", "Reativo_Ponta_cons", "Reativo_ForaPonta_cons")  	        				
+				VALUES (?,?,?,?,?,?,?,?,?,?,?)
+			""",(item['medidor_cons'],item['constKwh_cons'],item['constDemanda_cons'],item['constReativo_cons'],item['mesfat_cons'],item['dataleitura_cons'],item['Kwh_Ponta_cons'],item['Kwh_ForaPonta_cons'],item['Demanda_FPonta_cons'],item['Reativo_Ponta_cons'],item['Reativo_ForaPonta_cons']))
+
+	print("Dados de consumo inserfidos com sucesso")
+	conn.commit()
+	conn.close()
+	
+def inserirEmpresa():
+	empresa = [
+					{"nome_emp":"MacDonalds S.A", "endereco_emp":"Rua Alagoas, 540", "cidade_emp":"Manaus",	"cnpj_emp":"78.324.412.0001-78", "telefone1_emp":"011 - 9.8822-4416", "telefone2_emp":"041 9.8822-888816"},
+					{"nome_emp":"Carambei Ltda", "endereco_emp":"Rua Para, 1.670", "cidade_emp":"Andira",	"cnpj_emp":"58.324.412.0001-88", "telefone1_emp":"011 - 9.8822-4416", "telefone2_emp":"041 9.8822-888816"},
+					
+			]
+
+	print (f'Saida da Lista: {empresa} toda')
+
+	for item in empresa:
+		cursor.execute("""			
+				INSERT INTO "empresa" ("nome_emp", "endereco_emp","cidade_emp","cnpj_emp","telefone1_emp","telefone2_emp")  	        				
+				VALUES (?,?,?,?,?,?)
+			""",(item['nome_emp'],item['endereco_emp'],item['cidade_emp'],item['cnpj_emp'],item['telefone1_emp'],item['telefone2_emp']))
+
+	print("Dados da empresa inseridos com sucesso")
+	conn.commit()
+	conn.close()
+
+def inserirUsuario():
+	usuario = [
+					{"nome_user":"Djalma Oliveira", "registro_user":"C022220", "senha_user":"123456",	"cargo_user":"Eng. Responsavel", "perfil_user":"Administrador"},
+					{"nome_user":"Jão da Cunha", "registro_user":"C044440", "senha_user":"123456",	"cargo_user":"Eletricista", "perfil_user":"User"},				
+					
+			]
+
+
+	print (f'Saida da Lista: {usuario} toda')
+
+	for item in usuario:
+		cursor.execute("""			
+				INSERT INTO "usuario" ("nome_user", "registro_user","senha_user","cargo_user","perfil_user")  	        				
+				VALUES (?,?,?,?,?)
+			""",(item['nome_user'],item['registro_user'],item['senha_user'],item['cargo_user'],item['perfil_user']))
+
+	print("Dados dos usuários foram inseridos com sucesso")
+	conn.commit()
+	conn.close()
+
+inserirUsuario()
+#inserirEmpresa()
+#inserirConsumo()
+#inserirAcesso()
+#inserirTarifa()
