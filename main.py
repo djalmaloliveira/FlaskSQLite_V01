@@ -1,5 +1,5 @@
 #https://neps.academy/br/blog/criando-uma-aplicacao-web-com-flask---exemplo-simples---parte-1
-#Djalma - 15/02
+#Djalma - 15/02  
 from flask import Flask, request, render_template # Importa a biblioteca
 
 app = Flask(__name__, template_folder='template') # Inicializa a aplicação
