@@ -2,6 +2,7 @@
 #Djalma - 15/02  
 from flask import Flask, request, render_template # Importa a biblioteca
 
+
 app = Flask(__name__, template_folder='template') # Inicializa a aplicação
 
 @app.route('/') # Nova rota
