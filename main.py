@@ -1,9 +1,10 @@
 #https://neps.academy/br/blog/criando-uma-aplicacao-web-com-flask---exemplo-simples---parte-1
-
+#https://neps.academy/br/blog/criando-uma-aplicacao-web-com-flask---exemplo-simples---parte-2
+#Djalma - 15/02  
 from flask import Flask, request, render_template # Importa a biblioteca
 
-app = Flask(__name__, template_folder='template') # Inicializa a aplicação
 
+app = Flask(__name__, template_folder='template') # Inicializa a aplicação
 
 @app.route('/') # Nova rota
 def main():
