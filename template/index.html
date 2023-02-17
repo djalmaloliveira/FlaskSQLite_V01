@@ -2,32 +2,44 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <title>Meu primeiro site :D</title>
     </head>
     <body>
-       Index - 48 -  Aprovado ou Reprovado
-
-        <div>
-            <form method="get">
-                Primeira Nota:
-                <input type="text" name="primeira">
+        <div class="container d-flex h-100">
+            <div class="w-100 align-self-center">
+                <p>
+                <h1>
+                    09 -  Aprovado ou Reprovado
+                </h1>
                 <br>
-                Segunda Nota:
-                <input type="text" name="segunda">
-                <br>
-                <input type="submit" value="Enviar">
-            </form>
-        </div>
+                <div>
+                    <div class="row justify-content-center">
+                        <form method="get">
+                            Primeira Nota:
+                            <input  class="form-control" type="text" name="primeira" placeholder="Primeira Nota">
+                            <br>
+                            Segunda Nota:
+                            <input  class="form-control" type="text" name="segunda" placeholder="Segunda Nota">
+                            <br><br>
+                            <div class="form-row justify-content-center mt-4">                               
+                                <input class="btn btn-primary" type="submit" value="Enviar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
-        {% if resultado %}
-        <div>
-            {{resultado}} com média {{media}}!!!
+                {% if resultado %}
+                <div>
+                    <div class="row justify-content-center">
+                        <br>
+                        <h3>{{resultado}} com média {{media}}!!!</h3>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
         </div>
-        {% endif %}
-
-        
 
     <!--Bootstrap-->
     <!-- JavaScript (Opcional) -->

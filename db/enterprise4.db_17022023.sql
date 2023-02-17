@@ -52,7 +52,6 @@ CREATE TABLE IF NOT EXISTS "usuario" (
 	"perfil_user"	TEXT,
 	PRIMARY KEY("id_user" AUTOINCREMENT)
 );
-
 INSERT INTO "acesso" ("id_acesso","numero_acesso","nomecliente_acesso","nivel_acesso","data_acesso","horario_acesso","versao_acesso") VALUES (2,24.0,'Teste','adm','14/01/2022','22:21','321');
 INSERT INTO "acesso" ("id_acesso","numero_acesso","nomecliente_acesso","nivel_acesso","data_acesso","horario_acesso","versao_acesso") VALUES (3,25.0,'Amelia','user','15/01/2022','18:45','321');
 INSERT INTO "acesso" ("id_acesso","numero_acesso","nomecliente_acesso","nivel_acesso","data_acesso","horario_acesso","versao_acesso") VALUES (15,36.0,'Jose da Rede','user','05/01/2023','18:15','324');
